@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestão de Veículos</title>
+  <link rel="stylesheet" href="../style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+    <section>
+        <button onclick="listarVeiculos()">Listar veiculos</button>
+        <button onclick="window.location.href='../index.html'">Voltar</button>
+    </section>
+
+    <section>
+        <h2>Filtro</h2>
+        <form>
+            <select id="filtro">
+                <option value="MARCA">MARCA</option>
+                <option value="MODELO">MODELO</option>
+                <option value="PRECO">PREÇO</option>
+                <option value="ANO">ANO</option>
+                <option value="STATUS">STATUS</option>
+            </select>
+            <select id="status" required disabled>
+                <option>DISPONIVEL</option>
+                <option>INDISPONIVEL</option>
+                <option>MANUTENCAO</option>
+                <option>VENDIDO</option>
+                <option>DESCONTINUADO</option>
+            </select>
+
+            <input id="campoTexto" required>
+            <button onclick="listarVeiculosFiltro()" type="button">pesquisar</button>
+            
+        </form>
+    </section>
+
+    <section id="Lista">
+  </section>
+</body>
+</html>

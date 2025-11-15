@@ -1,0 +1,101 @@
+/* ======== ESTILO GERAL ======== */
+body {
+  font-family: "Inter", Arial, sans-serif;
+  margin: 2rem;
+  background: #eef2f7;
+  color: #333;
+  line-height: 1.6;
+}
+
+h1 {
+  color: #005b99;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.3rem;
+  font-weight: 700;
+}
+
+/* ======== SEÇÕES ======== */
+section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+h2 {
+  margin-top: 0;
+  color: #0066bb;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+/* ======== FORMULÁRIOS E INPUTS ======== */
+input, select {
+  margin: 0.4rem 0;
+  padding: 0.6rem;
+  width: 100%;
+  max-width: 350px;
+  border: 1px solid #cfd7df;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #fafbfc;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus, select:focus {
+  border-color: #0077cc;
+  box-shadow: 0 0 5px rgba(0, 119, 204, 0.3);
+  outline: none;
+}
+
+/* ======== BOTÕES ======== */
+button {
+  margin-top: 0.7rem;
+  padding: 0.7rem;
+  width: 100%;
+  max-width: 350px;
+  border: none;
+  border-radius: 6px;
+  background: #0077cc;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background: #005fa3;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* ======== LISTA DE VEÍCULOS ======== */
+#lista-veiculos {
+  list-style: none;
+  padding: 0;
+}
+
+#lista-veiculos li {
+  background: #f9fbfd;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 0.7rem;
+  border-left: 4px solid #0077cc;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+#lista-veiculos li:hover {
+  background: #eef7ff;
+  border-left-color: #005fa3;
+}

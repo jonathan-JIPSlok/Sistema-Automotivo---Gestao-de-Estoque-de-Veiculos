@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestão de Veículos</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <h1>Gestão de Veículos</h1>
+
+  <section>
+    <h2>Opções</h2>
+    <button onclick="window.location.href='veiculos/index.html'">Lista de Veiculos</button>
+    <button onclick="window.location.href='marca/index.html'">Cadastrar marca</button>
+    <button onclick="window.location.href='modelo/index.html'">Cadastrar modelo</button>
+    <button onclick="window.location.href='veiculoEdit/index.html'">Editar veiculo</button>
+  </section>
+
+  <section>
+    <h2>Cadastrar Veículo</h2>
+    <form id="form-cadastro">
+      <select id="modelo" required onclick="carregarModelos()">
+        <option value="" data-nome="">Selecione o modelo</option>
+      </select>
+
+      <select id="marca" required onclick="carregarMarcas()">
+        <option value="" data-nome="">Selecione a marca</option>
+      </select>
+
+      <input type="number" placeholder="Ano" id="ano" required min="1000" max="9999"/>
+      <input type="text" placeholder="Cor" id="cor" required maxlength="2"/>
+      <input type="number" placeholder="Preço" id="preco" required />
+      <input type="number" placeholder="Quilometragem" id="km" required />
+      
+      <select id="status" required>
+        <option>DISPONIVEL</option>
+        <option>INDISPONIVEL</option>
+        <option>MANUTENCAO</option>
+        <option>VENDIDO</option>
+        <option>DESCONTINUADO</option>
+      </select>
+      
+      <button type="submit">Cadastrar</button>
+    </form>
+  </section>
+  
+  
+  <section>
+    <form>
+      <h2>Deletar Veículo</h2>
+      <input type="number" id="id-deletar" placeholder="ID do veículo" required/>
+      <button onclick="deletarVeiculo()" type="submit" >Deletar</button>
+    </form>
+  </section>
+</body>
+</html>
