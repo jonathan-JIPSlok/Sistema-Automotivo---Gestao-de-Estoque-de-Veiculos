@@ -85,9 +85,9 @@ public class VeiculoController {
         }
         else if (veiculo.getStatusDisponibilidade() == StatusDisponibilidade.VENDIDO || veiculo.getStatusDisponibilidade() == StatusDisponibilidade.DESCONTINUADO) {
             veiculoService.deletarVeiculo(id);
-            return ResponseEntity.status(HttpStatus.ACCEPTED).build();
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         } else {
-            return ResponseEntity.status(HttpStatus.NOT_MODIFIED).build();
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
 
     }

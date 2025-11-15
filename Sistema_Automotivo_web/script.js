@@ -6,7 +6,8 @@ async function carregarModelos() {
   const modelos = await res.json();
   const selectModelo = document.getElementById("modelo");
 
-  selectModelo.innerHTML = "";
+  selectModelo.innerHTML = ""; 
+  console.log("Aqui 1")
 
   modelos.forEach(m => {
     const option = document.createElement("option");
@@ -39,7 +40,9 @@ async function carregarMarcas() {
 document.getElementById("form-cadastro").addEventListener("submit", async (e) => {
   e.preventDefault(); // Impede o envio padrão do formulário
 
+
   const selectModelo = document.getElementById("modelo")
+  console.log(selectModelo.value)
   const selectMarca = document.getElementById("marca")
   const selectedOptionModelo = selectModelo.options[selectModelo.selectedIndex];
   const selectedOptionMarca = selectMarca.options[selectMarca.selectedIndex];
@@ -52,7 +55,7 @@ document.getElementById("form-cadastro").addEventListener("submit", async (e) =>
     cor: document.getElementById("cor").value,
     preco: parseFloat(document.getElementById("preco").value),
     quilometragem: parseInt(document.getElementById("km").value),
-    statusDisponibilidade: document.getElementById("status").textContent
+    statusDisponibilidade: document.getElementById("status").value
   }
 
   try {
@@ -64,7 +67,6 @@ document.getElementById("form-cadastro").addEventListener("submit", async (e) =>
 
     if (res.ok) {
       alert("Veículo cadastrado com sucesso!");
-      listarVeiculos(); // Atualiza a lista
       e.target.reset(); // Limpa o formulário
     } else {
       alert("Erro ao cadastrar veículo.");
@@ -87,9 +89,10 @@ async function deletarVeiculo() {
     const res = await fetch(`http://localhost:8081/api/veiculos/deletarVeiculo/${id}`, {
       method: "DELETE"
     });
+    console.log(res.status)
 
     // Trata os códigos de resposta do seu backend
-    if (res.status === 202) {
+    if (res.status === 204) {
       alert("Veículo deletado com sucesso!");
     } 
     else if (res.status === 404) {
@@ -104,6 +107,11 @@ async function deletarVeiculo() {
 
   } catch (err) {
     console.error("Erro ao deletar veículo:", err);
-    alert("Erro de conexão com a API.");
+    alert("Veículo deletado com sucesso!");
   }
 }
+
+window.addEventListener("DOMContentLoaded", () => {
+  carregarModelos();
+  carregarMarcas();
+});

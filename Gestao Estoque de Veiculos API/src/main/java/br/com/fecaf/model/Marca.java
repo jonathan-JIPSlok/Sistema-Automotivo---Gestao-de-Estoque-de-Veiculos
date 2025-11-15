@@ -11,7 +11,7 @@ public class Marca {
     @Column(name = "id_marca") // corresponde à coluna do banco
     private int id;
 
-    @Column(name = "nome") // opcional, mas garante alinhamento
+    @Column(name = "nome") //garante alinhamento
     private String nome;
 
     // getters e setters
